@@ -1,13 +1,12 @@
 package com.codecool.backend.dto;
 
+import java.time.LocalDate;
+
 public record ProductDto(
-        Integer id,
-        String store,
+        String sku,
         String name,
-        String category,
-        Double price,
-        String unit,
-        Double pricePerUnit
+        LocalDate createdAt,
+        Long categoryId
 ) {}
 
 

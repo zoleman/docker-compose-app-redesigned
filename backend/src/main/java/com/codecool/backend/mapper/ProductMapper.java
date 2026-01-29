@@ -7,13 +7,10 @@ public class ProductMapper {
 
     public static ProductDto toDto(Product product) {
         return new ProductDto(
-                product.getId(),
-                product.getStore(),
+                product.getSku(),
                 product.getName(),
-                product.getCategory(),
-                product.getPrice(),
-                product.getUnit(),
-                product.getPricePerUnit()
+                product.getCreatedAt(),
+                product.getCategoryId()
         );
     }
 }
