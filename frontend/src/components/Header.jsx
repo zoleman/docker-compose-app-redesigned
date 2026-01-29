@@ -1,5 +1,5 @@
 import React from 'react'
-import { WebLog } from '../logos/WebLogo.jsx'
+import {WebLogo} from '../logos/WebLogo.jsx'
 
 export default function Header() {
   return (
