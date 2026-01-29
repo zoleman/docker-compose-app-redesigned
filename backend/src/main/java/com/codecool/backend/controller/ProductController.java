@@ -13,7 +13,6 @@ import java.util.Map;
 public class ProductController {
     @GetMapping
     public Map<String, String> getAllProducts() {
-        System.out.println("hivas");
         return Map.of("status", "ok");
     }
 }
