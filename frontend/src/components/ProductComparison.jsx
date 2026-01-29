@@ -1,4 +1,5 @@
 export default function ProductComparison(){
+
     return (
         <section className="bg-white">
             <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
