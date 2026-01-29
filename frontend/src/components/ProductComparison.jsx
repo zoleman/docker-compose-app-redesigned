@@ -1,4 +1,4 @@
-export default function ProductComparison(){
+export default function ProductComparison({handleSubmit}){
 
     return (
         <section className="bg-white">
@@ -23,7 +23,7 @@ export default function ProductComparison(){
                                 <button
                                     type="button"
                                     className="mt-4 inline-flex w-full items-center justify-center rounded-xl bg-green-600 px-6 py-4 text-sm font-semibold text-white shadow-sm transition hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-600 focus:ring-offset-2"
-                                    onClick={() => {
+                                    onClick={() => {handleSubmit()
                                     }}
                                 >
                                     Összes termék megjelenítése
