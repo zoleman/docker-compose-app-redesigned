@@ -1,5 +1,5 @@
 export default async function fetchProducts(){
-    const url = 'http://localhost:8080/api/products';
+    const url = '/api/products';
     try {
         const response = await fetch(url);
         if (!response.ok) {
@@ -11,5 +11,4 @@ export default async function fetchProducts(){
     } catch (error) {
         console.error('Fetch error:', error);
     }
-
 }

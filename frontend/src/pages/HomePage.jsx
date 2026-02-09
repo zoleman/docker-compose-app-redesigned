@@ -1,24 +1,22 @@
 import React, { useState } from 'react'
 import Header from '../components/Header.jsx'
-import ProductComparison from "../components/ProductComparison.jsx";
-import Product from '../components/Product.jsx';
+import HeroSection from '../components/homePage/HeroSection.jsx';
+import FeaturesSection from '../components/homePage/FeaturesSection.jsx';
+import HowItWork from '../components/homePage/HowItWork.jsx';
+import StoreLogos from '../components/homePage/StoreLogos.jsx';
 
 function HomePage() {
-  const [isSubmited,setIsSubmited] = useState(false)
-
-  const handleSubmit = () => {
-    isSubmited ? setIsSubmited(false) : setIsSubmited(true)
-  } 
-
   return (
-    <>
-      <Header/>
-      <ProductComparison handleSubmit={handleSubmit}/>
-      {isSubmited && <Product /> }
-      
-    </>
-
-)
+    <div className="min-h-screen flex flex-col">
+     
+        
+        <HeroSection />
+        <FeaturesSection />
+        <StoreLogos/>
+        <HowItWork/>
+ 
+    </div>
+  );
 }
 
-export default HomePage
+export default HomePage;
