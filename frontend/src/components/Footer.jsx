@@ -65,9 +65,9 @@ export function Footer() {
                 </div>
 
                
-                <div className="mt-12 pt-8 border-t border-background/10 flex flex-col sm:flex-row justify-between items-center gap-4">
+                <div className="mt-12 pt-8 border-t border-background/10 flex flex-col sm:flex-row! justify-between items-center gap-4">
                     <p className="text-sm text-background/60">
-                        © 2026 ÁrFigyelő. All rights reserved.
+                        © 2026 Grocerylytics. All rights reserved.
                     </p>
                     <div className="flex items-center gap-6">
                         <a href="#" className="text-sm text-background/60 hover:text-background">
