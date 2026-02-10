@@ -5,26 +5,26 @@ const steps = [
   {
     number: "1",
     icon: Search,
-    title: "Keress termékre",
-    description: "Írd be a keresett termék nevét vagy válassz kategóriát.",
+    title: "Search for product",
+    description: "Enter the name of the product you are looking for or select a category.",
   },
   {
     number: "2",
     icon: BarChart2,
-    title: "Hasonlítsd össze",
-    description: "Nézd meg az árakat az összes támogatott áruházban egyszerre.",
+    title: "Compare",
+    description: "Check prices in all supported stores at once.",
   },
   {
     number: "3",
     icon: ShoppingCart,
-    title: "Tervezd meg",
-    description: "Készíts bevásárlólistát és optimalizáld a költségeidet.",
+    title: "Plan it",
+    description: "Make a shopping list and optimize your costs.",
   },
   {
     number: "4",
     icon: Smile,
-    title: "Spórolj",
-    description: "Élvezd a megtakarítást és a hatékony bevásárlást!",
+    title: "Save",
+    description: "Enjoy savings and efficient shopping!",
   },
 ]
 
@@ -34,10 +34,10 @@ function HowItWork() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-            Hogyan működik?
+            How does it work?
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Négy egyszerű lépésben kezdheted el a spórolást
+            You can start saving in four simple steps
           </p>
         </div>
 

@@ -19,13 +19,13 @@ function HeroSection() {
 
 
                             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-tight text-balance">
-                                Hasonlítsd össze az{" "}
-                                <span className="text-primary">élelmiszer árakat</span>{" "}
-                                egy helyen
+                               Compare the{" "}
+                                <span className="text-primary">food prices</span>{" "}
+                                in one place
                             </h1>
 
                             <p className="text-lg text-muted-foreground max-w-lg leading-relaxed">
-                                Keress rá bármilyen termékre és találd meg a legjobb árat a legnagyobb magyar áruházak kínálatából.
+                                 Search for any product and find the best price from the largest Global stores.
                             </p>
                         </div>
 
@@ -42,19 +42,19 @@ function HeroSection() {
                                 />
                             </div>
                             <Button size="lg" className="h-14 px-8">
-                                Keresés
+                                Search
                             </Button>
                         </div>
                         {/* POPULAR */}
                         <div className="flex flex-wrap items-center gap-2">
-                            <span className="text-sm text-muted-foreground">Népszerű:</span>
-                            {["Tej", "Kenyér", "Csirkemell", "Tojás", "Banán"].map((term) => (
+                            <span className="text-sm text-muted-foreground">Popular:</span>
+                            {["Milk", "Bread", "Chicken breast", "Egg", "Banana"].map((prod) => (
                                 <button
-                                    key={term}
+                                    key={prod}
                                     className="px-3 py-1.5 bg-secondary hover:bg-secondary/80 rounded-full text-sm font-medium text-secondary-foreground transition-colors hover:cursor-pointer"
-                                    onClick={() => setSearchQuery(term)}
+                                    onClick={() => setSearchQuery(prod)}
                                 >
-                                    {term}
+                                    {prod}
                                 </button>
                             ))}
                         </div>
@@ -69,7 +69,7 @@ function HeroSection() {
                                 </div>
                                 <div>
                                     <p className="text-3xl font-bold text-foreground">50,000+</p>
-                                    <p className="text-sm text-muted-foreground">Összehasonlított termék</p>
+                                    <p className="text-sm text-muted-foreground">Compared product</p>
                                 </div>
                             </div>
                         </div>
@@ -79,15 +79,15 @@ function HeroSection() {
                                 <TrendingDown className="w-5 h-5 text-primary" />
                             </div>
                             <p className="text-2xl font-bold text-foreground">12+</p>
-                            <p className="text-sm text-muted-foreground">Bolt kínálata</p>
+                            <p className="text-sm text-muted-foreground">Store offerings</p>
                         </div>
 
                         <div className="bg-background border border-border rounded-2xl p-5 space-y-2">
                             <div className="w-10 h-10 bg-secondary rounded-xl flex items-center justify-center">
                                 <Clock className="w-5 h-5 text-primary" />
                             </div>
-                            <p className="text-2xl font-bold text-foreground">Naponta</p>
-                            <p className="text-sm text-muted-foreground">Frissített árak</p>
+                            <p className="text-2xl font-bold text-foreground">Daily</p>
+                            <p className="text-sm text-muted-foreground">Updated prices</p>
                         </div>
                     </div>
 
