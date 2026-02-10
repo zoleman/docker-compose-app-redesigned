@@ -10,7 +10,7 @@ const links = [{
   link: "/"
 },
 {
-  name: "Shoppong List",
+  name: "Shopping List",
   link: "shopping-list"
 },
 {
