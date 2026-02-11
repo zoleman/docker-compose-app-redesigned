@@ -8,7 +8,7 @@ services:
     container_name: backend
     restart: always
     volumes:
-      - ./backend:/app/src   # host source mounted for hot reload
+      - ./backend:/app   # host source mounted for hot reload
     environment:
       SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/${DB_NAME}
       SPRING_DATASOURCE_USERNAME: ${DB_USERNAME}
@@ -43,7 +43,7 @@ services:
     container_name: frontend
     restart: always
     volumes:
-      - ./frontend:/app/src
+      - ./frontend:/app
     environment:
       REACT_APP_BACKEND_URL: http://backend:8080
     ports:

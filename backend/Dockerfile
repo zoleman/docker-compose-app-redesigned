@@ -1,12 +1,12 @@
 # --------- Dev Stage ---------
-FROM maven:3.9.8-openjdk-23 AS dev
+FROM maven:3.9.9-amazoncorretto-23-debian-bookworm AS dev
 WORKDIR /app
 COPY pom.xml .
 RUN mvn dependency:go-offline
 CMD ["mvn", "spring-boot:run", "-Dspring-boot.run.profiles=dev"]
 
 # --------- Build Stage ---------
-FROM maven:3.9.8-openjdk-23 AS build
+FROM maven:3.9.9-amazoncorretto-23-debian-bookworm AS build
 WORKDIR /app
 COPY pom.xml .
 COPY src/ ./src
