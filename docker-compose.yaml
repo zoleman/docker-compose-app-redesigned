@@ -1,0 +1,26 @@
+version: "3.9"
+
+services:
+  backend:
+    build:
+      context: ./backend
+      target: dev   # Use the dev stage
+    container_name: backend
+    restart: always
+    volumes:
+      - ./backend:/app/src   # host source mounted for hot reload
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/${DB_NAME}
+      SPRING_DATASOURCE_USERNAME: ${DB_USERNAME}
+      SPRING_DATASOURCE_PASSWORD: ${DB_PASSWORD}
+      SPRING_PROFILES_ACTIVE: dev
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    networks:
+      - my-shared-network
+
+
+networks:
+  my-shared-network: {}
