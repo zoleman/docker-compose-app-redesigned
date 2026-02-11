@@ -3,6 +3,8 @@ FROM node:20 AS dev
 WORKDIR /app
 COPY package*.json ./
 RUN npm install
+COPY ./src ./src
+COPY vite.config.js ./
 EXPOSE 3000
 CMD ["npm", "run", "dev", "--", "--host"]
 
