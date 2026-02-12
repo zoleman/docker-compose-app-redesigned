@@ -1,35 +1,69 @@
-import React from 'react'
-import { WebLogo } from '../logos/WebLogo.jsx'
+import React,{useState} from 'react'
+
+import { Search, ShoppingCart, Menu, X } from "lucide-react"
+import { Button } from './ui/Button'
 
 export default function Header() {
+
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+
   return (
-    <header className='sticky top-0 z-50 bg-white border-b border-gray'>
-      <div className='max-w-7x1 mx-auto sm:px-6 lg:px-8'>
-        <div className='flex items-center justify-between h-16'>
-
-
-          <WebLogo />
-          <nav className='hidden  items-center gap-8 md:flex'>
-            <a href="#" className='text-md font-medium text-foreground hover:text-primary transition-colors'>
-              kezdolap
-            </a>
-            <a href="#" className='text-md font-medium text-foreground hover:text-primary transition-colors'>
-              Összes termek
-            </a>
-            <a href="#" className='text-md font-medium text-foreground hover:text-primary transition-colors'>Kategóriák</a>
-            <a href="#" className='text-md font-medium text-foreground hover:text-primary transition-colors'>Akciók</a>
-            <a href="#" className='text-md font-medium text-foreground hover:text-primary transition-colors'>Bevásárlólista</a>
-          </nav>
-            <div className='flex items-center gap-4'>
-              <button className='hidden md:flex bg-green-600 p-2 rounded-lg text-white text-md'>
-                Bejelentkezés
-              </button>
+    <header className="sticky top-0 z-50 bg-card border-b border-border">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16">
+          {/* Logo */}
+          <div className="flex items-center gap-2">
+            <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+              <ShoppingCart className="w-5 h-5 text-primary-foreground" />
             </div>
+            <span className="text-xl font-semibold text-foreground">ÁrFigyelő</span>
+          </div>
 
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex! items-center gap-8 md:gap-8">
+            <a href="#" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
+              Kezdőlap
+            </a>
+            <a href="#" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
+              Termékek
+            </a>
+            <a href="#" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
+              Bevásárlólista
+            </a>
+          </nav>
 
+          {/* Right Side */}
+          <div className="flex items-center gap-4">
+            <Button variant={"ghost"} size={"icon"}  className="hidden md:flex!">
+              <Search className="w-5 h-5" />
+            </Button>
+            <Button className="hidden md:flex!">Bejelentkezés</Button>
+
+            {/* Mobile Menu Button */}
+            <Button
+              variant="ghost"
+              size="icon"
+              className="flex md:hidden!"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+            >
+              {isMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            </Button>
+          </div>
         </div>
-      </div>
 
+        {/* Mobile Menu */}
+        {isMenuOpen && (
+          <div className="md:hidden py-4 border-t border-border">
+            <nav className="flex flex-col gap-4">
+              <a href="#" className="text-sm font-medium text-foreground">Kezdőlap</a>
+              <a href="#" className="text-sm font-medium text-muted-foreground">Kategóriák</a>
+              <a href="#" className="text-sm font-medium text-muted-foreground">Akciók</a>
+              <a href="#" className="text-sm font-medium text-muted-foreground">Bevásárlólista</a>
+              <Button className="w-full mt-2">Bejelentkezés</Button>
+            </nav>
+          </div>
+        )}
+      </div>
     </header>
   )
 }
