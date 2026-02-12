@@ -4,23 +4,23 @@ import { TrendingDown, Bell, ListChecks, BarChart3 } from "lucide-react"
 const features = [
   {
     icon: TrendingDown,
-    title: "Árösszehasonlítás",
-    description: "Azonnal lásd, melyik boltban a legolcsóbb a keresett termék. Spórolj időt és pénzt.",
+    title: "Price comparison",
+    description: "See immediately which store has the cheapest price for the product you are looking for. Save time and money.",
   },
   {
     icon: Bell,
-    title: "Árfigyelés",
-    description: "Állíts be értesítést és azonnal értesülj, ha a kedvenc terméked leárazásra kerül.",
+    title: "Price monitoring",
+    description: "Set up a notification and be notified immediately when your favorite product goes on sale.",
   },
   {
     icon: ListChecks,
-    title: "Bevásárlólista",
-    description: "Készíts listát és a rendszer megmutatja, melyik boltban lesz a legolcsóbb a bevásárlás.",
+    title: "Shopping list",
+    description: "Make a list and the system will show you which store will be the cheapest for your shopping.",
   },
   {
     icon: BarChart3,
     title: "Árstatisztikák",
-    description: "Kövesd az árak alakulását időben és vásárolj mindig a legjobb pillanatban.",
+    description: "Follow price trends in real time and always buy at the best moment.",
   },
 ]
 
@@ -30,10 +30,10 @@ function featuresSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4 text-balance">
-            Okos vásárlás, egyszerűen
+            Smart shopping, made easy
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Minden eszköz a kezedben, hogy a lehető legtöbbet hozd ki a bevásárlásaidból.
+            Everything you need to get the most out of your shopping.
           </p>
         </div>
 

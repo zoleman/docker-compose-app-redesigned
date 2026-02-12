@@ -1,5 +1,3 @@
-import React, { useState } from 'react'
-import Header from '../components/Header.jsx'
 import HeroSection from '../components/homePage/HeroSection.jsx';
 import FeaturesSection from '../components/homePage/FeaturesSection.jsx';
 import HowItWork from '../components/homePage/HowItWork.jsx';

@@ -1,16 +1,65 @@
-# React + Vite
+## Core Stack
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- `react`: `^19.2.0`
+- `react-dom`: `^19.2.0`
+- `react-router-dom`: `^7.13.0`
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Design & UI
 
-## React Compiler
+- `tailwindcss`: `^4.1.18`
+- `tailwind-merge`: `^3.4.0`
+- `class-variance-authority`: `^0.7.1`
+- `clsx`: `^2.1.1`
+- `tailwindcss-animate`: `^1.0.7`
+- `@radix-ui/react-slot`: `^1.2.4`
+- `lucide-react`: `^0.563.0`
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## ⚠️ Important: shadcn/ui
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+This project uses **shadcn/ui**.  
+Documentation: https://ui.shadcn.com/docs
+
+**shadcn/ui is NOT installed as an npm package.**
+
+shadcn/ui works by **generating component source files directly into the project**  
+(typically under `src/components/ui`).
+
+There is **no shadcn dependency in `node_modules`** — this is expected behavior.
+
+---
+
+## Getting Started
+
+Install dependencies:
+
+
+```bash
+npm install
+```
+Run the development server:
+```bash
+npm run dev
+```
+
+## Troubleshooting
+
+If you experience issues starting the development server:
+
+1. Remove `node_modules` and reinstall dependencies:
+    ``` bash
+    rm -rf node_modules
+    npm install
+    ```
+    
+- `package-lock.json` is used to ensure consistent dependency versions.
+Only delete it when troubleshooting dependency-related issues.
+
+2. If the problem persists, perform a clean install:
+    ```bash
+    rm -rf node_modules package-lock.json
+    npm install
+    ```
