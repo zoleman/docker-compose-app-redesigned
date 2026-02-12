@@ -1,22 +1,4 @@
 {
-    "categories": [
-        {
-            "id": 1,
-            "name": "_teat_1"
-        },
-        {
-            "id": 2,
-            "name": "_teat_2"
-        },
-        {
-            "id": 3,
-            "name": "_test_3"
-        },
-        {
-            "id": 4,
-            "name": "_test_4"
-        }
-    ],
     "brands": [
         {
             "id": 1,
