@@ -36,7 +36,7 @@ function HeroSection() {
                                 <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
                                 <Input
                                     type="text"
-                                    placeholder="Keress termékre... pl. tej, kenyér, alma"
+                                    placeholder="Search for a product... e.g. milk, bread, apples"
                                     value={searchQuery}
                                     onChange={(e) => setSearchQuery(e.target.value)}
                                     className="pl-12 h-14 text-base bg-background border-border"

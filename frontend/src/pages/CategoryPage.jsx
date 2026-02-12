@@ -9,7 +9,7 @@ import React, { useEffect, useState } from 'react';
 
 function Category() {
 
-  const { data, loading, error } = useFetch('/data/data.json')
+  const { data, loading, error } = useFetch('/data/data.json')//
 
   const [selectedBrand, setSelectedBrand] = useState([]);
   const [selectedCategories,setSelectedCategories] = useState([]);

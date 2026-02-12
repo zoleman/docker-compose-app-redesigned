@@ -2,23 +2,19 @@
     "categories": [
         {
             "id": 1,
-            "slug": "meat",
-            "name": "Meat"
+            "name": "_teat_1"
         },
         {
             "id": 2,
-            "slug": "dairy",
-            "name": "Dairy"
+            "name": "_teat_2"
         },
         {
             "id": 3,
-            "slug": "bakery",
-            "name": "Bakery"
+            "name": "_test_3"
         },
         {
             "id": 4,
-            "slug": "frozen",
-            "name": "Frozen food"
+            "name": "_test_4"
         }
     ],
     "brands": [
