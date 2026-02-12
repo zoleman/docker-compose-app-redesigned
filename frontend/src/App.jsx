@@ -4,6 +4,7 @@ import HomePage from './pages/HomePage'
 import VisiterLayout from './layout/VisiterLayout'
 import ShoppingListPage from './pages/ShoppingListPage'
 import CategoryPage from './pages/CategoryPage'
+import NotWorking from './pages/NotWorking'
 
 
 
@@ -15,6 +16,9 @@ function App() {
         <Route path='/shopping-list' element={<ShoppingListPage />} />
         <Route path='/category' element={<CategoryPage />} />
       </Route>
+
+      <Route path='/not-working' element={<NotWorking />} />
+
     </Routes>
   )
 }

@@ -1,125 +1,64 @@
 import { NotesList } from '@/components/ShoppingListPage/NoteList';
 import ShoppingListSummary from '@/components/ShoppingListPage/ShoppingListSummary';
+import { useCart } from '@/helpers/useCart';
 import React, { useState } from 'react'
 
-const initialItems = [
-  {
-    id: 1,
-    name: "Milk 2.8%",
-    quantity: 2,
-    unit: "liter",
-    checked: false,
-    prices: { tesco: 389, aldi: 359, lidl: 349, spar: 399 },
-  },
-  {
-    id: 2,
-    name: "Bread",
-    quantity: 1,
-    unit: "db",
-    checked: false,
-    prices: { tesco: 459, aldi: 429, lidl: 419, spar: 479 },
-  },
-  {
-    id: 3,
-    name: "chicken",
-    quantity: 500,
-    unit: "g",
-    checked: false,
-    prices: { tesco: 1899, aldi: 1799, lidl: 1749, spar: 1999 },
-  },
-  {
-    id: 4,
-    name: "Tomato",
-    quantity: 1,
-    unit: "kg",
-    checked: false,
-    prices: { tesco: 699, aldi: 649, lidl: 599, spar: 749 },
-  },
-  {
-    id: 5,
-    name: "Egg",
-    quantity: 10,
-    unit: "db",
-    checked: true,
-    prices: { tesco: 899, aldi: 849, lidl: 829, spar: 929 },
-  },
-  {
-    id: 6,
-    name: "Apple",
-    quantity: 1,
-    unit: "kg",
-    checked: false,
-    prices: { tesco: 499, aldi: 449, lidl: 429, spar: 529 },
-  },
-];
+
+//todod
 
 function ShoppingListPage() {
-  const [items, setItems] = useState(initialItems);
+    const { cart, removeFromCart ,toggleItem } = useCart();
 
-  const toggleItems = (id) => {
-    setItems(
-      items.map((item) =>
-        item.id === id ? { ...item, checked: !item.checked } : item
-      )
-    )
-  };
 
-  const deleteItem = (id) => {
-    setItems(items.filter((item) => item !== id))
-  };
-  // refactor based on API
+
+
+
   const addItem = (name) => {
-    if (!name.trim()) return;
-    const newItem = {
-      id: Date.now(),
-      name: name.trim(),
-      quantity: 1,
-      unit: "db",
-      checked: false,
-      prices: {
-        tesco: Math.floor(Math.random() * 500) + 200,
-        aldi: Math.floor(Math.random() * 500) + 200,
-        lidl: Math.floor(Math.random() * 500) + 200,
-        spar: Math.floor(Math.random() * 500) + 200,
-      },
-    };
-    setItems([...items, newItem]);
+    
   }
 
-  const storeTotals = { tesco: 0, aldi: 0, lidl: 0, spar: 0 };
-  items.forEach((item) => {
-    if (item.checked) return;
+const storeTotals = cart.reduce((totals, item) => {
+  if (item.checked) return totals;
 
-    Object.keys(storeTotals).forEach((store) => {
-      storeTotals[store] += item.prices[store] * (item.quantity > 10 ? 1 : item.quantity);
-    })
-  })
+  item.prices.forEach(({ storeName, price }) => {
+    const key = storeName.toLowerCase();
+
+    if (!totals[key]) {
+      totals[key] = 0;
+    }
+
+    totals[key] += price * (item.amount ?? 1);
+  });
+
+  return totals;
+}, {});
+
 
   const cheapestStore = Object.entries(storeTotals).sort((a, b) => a[1] - b[1])[0]?.[0];
   const mostExpensive = Math.max(...Object.values(storeTotals));
   const cheapest = Math.min(...Object.values(storeTotals));
-  const potentialSavings = mostExpensive - cheapest;
+  const potentialSavings = (mostExpensive - cheapest).toFixed(2);
 
-  const activeItems = items.filter((item) => !item.checked);
-  const checkedItems = items.filter((item) => item.checked);
+  const activeItems = cart.filter((item) => !item.checked);
+  const checkedItems = cart.filter((item) => item.checked);
 
   return (
     <div className='min-h-screen bg-background'>
       <div className='container mx-auto px-4 py-6 max-w-6xl'>
-        <div className='grid grid-cols-1 lg:grid-cols-2! gap-6'>
+        <div className='grid grid-cols-1 lg:grid-cols-3! gap-6'>
 
           {/* node lsit -left Side */}
-          <div className='lg:grid-snap-2!'>
+          <div className='lg:col-span-2!'>
             <NotesList
             activeItems={activeItems}
             checkedItems={checkedItems}
-            onToggle={toggleItems}
-            onDelete={deleteItem}
+            onToggle={toggleItem}
+            onDelete={removeFromCart}
             onAdd={addItem}
             />
           </div>
 
-          <div className="lg:col-span-1">
+          <div className="lg:col-span-1!">
             <ShoppingListSummary
               storeTotals={storeTotals}
               cheapestStore={cheapestStore}

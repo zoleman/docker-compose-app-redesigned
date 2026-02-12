@@ -1,147 +1,52 @@
 import React, { useState } from 'react'
+import NoteItem from './NoteItem';
+
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Badge } from "@/components/ui/badge";
 import {
-    Check,
     Circle,
     Plus,
-    Trash2,
-    ChevronDown,
-    ChevronUp,
     ShoppingBag,
     CheckCircle2,
 } from "lucide-react";
 
-const storeInfo = {
-    tesco: { name: "Tesco", color: "bg-blue-500" },
-    aldi: { name: "Aldi", color: "bg-orange-500" },
-    lidl: { name: "Lidl", color: "bg-yellow-500" },
-    spar: { name: "Spar", color: "bg-green-600" },
-};
-
-// need to separeta another files
-function NoteItem({ item, onToggle, onDelete }) {
-    const [expanded, setExpanded] = useState(false);
-
-    const cheapestStore = Object.entries(item.prices).sort((a, b) => a[1] - b[1])[0];
-    const cheapestPrice = cheapestStore[1];
-    const mostExpensive = Math.max(...Object.values(item.prices));
-    const savings = mostExpensive - cheapestPrice;
-
-    return (
-        <div
-            className={`group relative border-b border-border/50 last:border-b-0 transition-all ${item.checked ? "opacity-60" : ""
-                }`}
-        >
-            <div className="flex items-start gap-3 py-4 px-2">
-                {/* Checkbox */}
-                <button
-                    onClick={() => onToggle(item.id)}
-                    className={`mt-1 shrink-0 w-6 h-6 rounded-full border-2 flex items-center justify-center transition-all ${item.checked
-                            ? "bg-primary border-primary text-primary-foreground"
-                            : "border-muted-foreground/40 hover:border-primary"
-                        }`}
-                >
-                    {item.checked && <Check className="h-4 w-4" />}
-                </button>
-
-                {/* Content */}
-                <div className="flex-1 min-w-0">
-                    <div className="flex items-center justify-between gap-2">
-                        <span
-                            style={{ fontFamily: 'var(--font-handwriting)' }}
-                            className={`text-xl ${item.checked ? "line-through text-muted-foreground" : "text-foreground"
-                                }`}
-                        >
-                            {item.name}
-                        </span>
-                        <div className="flex items-center gap-2">
-                            {!item.checked && savings > 0 && (
-                                <Badge variant="outline" className="text-xs border-primary/30 text-primary bg-primary/5">
-                                    -{savings} Euro
-                                </Badge>
-                            )}
-                            <button
-                                onClick={() => onDelete(item.id)}
-                                className="opacity-0 group-hover:opacity-100 p-1 text-muted-foreground hover:text-destructive transition-all"
-                            >
-                                <Trash2 className="h-4 w-4" />
-                            </button>
-                        </div>
-                    </div>
-
-                    <div className="flex items-center gap-3 mt-1">
-                        <span style={{ fontFamily: 'var(--font-handwriting)' }} className="text-muted-foreground">
-                            {item.quantity} {item.unit}
-                        </span>
-                        {!item.checked && (
-                            <>
-                                <span className="text-muted-foreground">·</span>
-                                <span className="text-sm text-primary font-medium">
-                                    {cheapestPrice} Euro
-                                </span>
-                                <span className="text-xs text-muted-foreground">
-                                    ({storeInfo[cheapestStore[0]].name})
-                                </span>
-                            </>
-                        )}
-                    </div>
-
-                    {/* Expandable prices */}
-                    {!item.checked && (
-                        <>
-                            <button
-                                onClick={() => setExpanded(!expanded)}
-                                className="flex items-center gap-1 mt-2 text-xs text-muted-foreground hover:text-foreground transition-colors"
-                            >
-                                {expanded ? (
-                                    <>
-                                        <ChevronUp className="h-3 w-3" />
-                                        Price hiding
-                                    </>
-                                ) : (
-                                    <>
-                                        <ChevronDown className="h-3 w-3" />
-                                        View all
-                                    </>
-                                )}
-                            </button>
-
-                            {expanded && (
-                                <div className="mt-3 grid grid-cols-2 gap-2">
-                                    {Object.entries(item.prices)
-                                        .sort((a, b) => a[1] - b[1])
-                                        .map(([store, price], index) => (
-                                            <div
-                                                key={store}
-                                                className={`flex items-center justify-between p-2 rounded-lg text-sm ${index === 0
-                                                        ? "bg-primary/10 border border-primary/20"
-                                                        : "bg-muted/50"
-                                                    }`}
-                                            >
-                                                <div className="flex items-center gap-2">
-                                                    <div className={`w-2 h-2 rounded-full ${storeInfo[store].color}`} />
-                                                    <span className="text-foreground">{storeInfo[store].name}</span>
-                                                </div>
-                                                <span className={index === 0 ? "font-medium text-primary" : "text-muted-foreground"}>
-                                                    {price} Euro
-                                                </span>
-                                            </div>
-                                        ))}
-                                </div>
-                            )}
-                        </>
-                    )}
-                </div>
-            </div>
-        </div>
-    )
-}
 
 export function NotesList({ activeItems, checkedItems, onToggle, onDelete, onAdd }) {
+
   const [newItemName, setNewItemName] = useState("");
+
+
+  const COLORS = [
+  "bg-blue-500",
+  "bg-green-500",
+  "bg-yellow-500",
+  "bg-orange-500",
+  "bg-purple-500",
+  "bg-pink-500",
+];
+
+const storeInfo = React.useMemo(() => {
+  const info = {};
+  let colorIndex = 0;
+
+  [...activeItems, ...checkedItems].forEach(item => {
+    item.prices?.forEach(({ storeName }) => {
+      const key = storeName.toLowerCase();
+
+      if (!info[key]) {
+        info[key] = {
+          name: storeName,
+          color: COLORS[colorIndex % COLORS.length]
+        };
+        colorIndex++;
+      }
+    });
+  });
+
+  return info;
+}, [activeItems, checkedItems,COLORS]);
+
 
   const handleAdd = () => {
     if (newItemName.trim()) {
@@ -218,6 +123,7 @@ export function NotesList({ activeItems, checkedItems, onToggle, onDelete, onAdd
                   item={item}
                   onToggle={onToggle}
                   onDelete={onDelete}
+                  storeInfo={storeInfo}
                 />
               ))}
             </div>

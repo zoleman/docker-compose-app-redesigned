@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Input } from "@/components/ui/Input.jsx";
 import { Button } from "@/components/ui/Button.jsx";
 import { Search, TrendingDown, Clock, ShoppingBag } from "lucide-react";
+import { Link } from 'react-router-dom';
 
 function HeroSection() {
     const [searchQuery, setSearchQuery] = useState("");
@@ -19,13 +20,13 @@ function HeroSection() {
 
 
                             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-tight text-balance">
-                               Compare the{" "}
+                                Compare the{" "}
                                 <span className="text-primary">food prices</span>{" "}
                                 in one place
                             </h1>
 
                             <p className="text-lg text-muted-foreground max-w-lg leading-relaxed">
-                                 Search for any product and find the best price from the largest Global stores.
+                                Search for any product and find the best price from the largest Global stores.
                             </p>
                         </div>
 
@@ -42,7 +43,9 @@ function HeroSection() {
                                 />
                             </div>
                             <Button size="lg" className="h-14 px-8">
-                                Search
+                                <Link to="/not-working" className="flex items-center gap-2">
+                                    Search
+                                </Link>
                             </Button>
                         </div>
                         {/* POPULAR */}

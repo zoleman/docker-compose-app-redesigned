@@ -1,0 +1,1151 @@
+{
+    "categories": [
+        {
+            "id": 1,
+            "slug": "meat",
+            "name": "Meat"
+        },
+        {
+            "id": 2,
+            "slug": "dairy",
+            "name": "Dairy"
+        },
+        {
+            "id": 3,
+            "slug": "bakery",
+            "name": "Bakery"
+        },
+        {
+            "id": 4,
+            "slug": "frozen",
+            "name": "Frozen food"
+        }
+    ],
+    "brands": [
+        {
+            "id": 1,
+            "name": "Pick",
+            "slug": "pick"
+        },
+        {
+            "id": 2,
+            "name": "Sága",
+            "slug": "saga"
+        },
+        {
+            "id": 3,
+            "name": "Mizo",
+            "slug": "mizo"
+        },
+        {
+            "id": 4,
+            "name": "Pöttyös",
+            "slug": "pottyos"
+        },
+        {
+            "id": 5,
+            "name": "Gyermelyi",
+            "slug": "gyermelyi"
+        }
+    ],
+    "stores": [
+        {
+            "id": 1,
+            "name": "Lidl"
+        },
+        {
+            "id": 2,
+            "name": "Tesco"
+        },
+        {
+            "id": 3,
+            "name": "Aldi"
+        },
+        {
+            "id": 4,
+            "name": "Auchan"
+        }
+    ],
+    "products": [
+        {
+            "id": 1,
+            "name": "Chicken breast fillet",
+            "category": {
+                "id": 1,
+                "name": "Meat"
+            },
+            "brand": {
+                "id": 2,
+                "name": "Sága"
+            },
+            "quantity": 1000,
+            "unit": "g",
+            "prices": [
+                {
+                    "storeId": 1,
+                    "storeName": "Lidl",
+                    "price": 6.20
+                },
+                {
+                    "storeId": 2,
+                    "storeName": "Tesco",
+                    "price": 6.45
+                },
+                {
+                    "storeId": 3,
+                    "storeName": "Aldi",
+                    "price": 6.10
+                },
+                {
+                    "storeId": 4,
+                    "storeName": "Auchan",
+                    "price": 6.50
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "name": "Chicken thigh",
+            "category": {
+                "id": 1,
+                "name": "Meat"
+            },
+            "brand": {
+                "id": 2,
+                "name": "Sága"
+            },
+            "quantity": 1000,
+            "unit": "g",
+            "prices": [
+                {
+                    "storeId": 1,
+                    "storeName": "Lidl",
+                    "price": 5.60
+                },
+                {
+                    "storeId": 2,
+                    "storeName": "Tesco",
+                    "price": 5.80
+                },
+                {
+                    "storeId": 3,
+                    "storeName": "Aldi",
+                    "price": 5.55
+                },
+                {
+                    "storeId": 4,
+                    "storeName": "Auchan",
+                    "price": 5.90
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "name": "Pork salami",
+            "category": {
+                "id": 1,
+                "name": "Meat"
+            },
+            "brand": {
+                "id": 1,
+                "name": "Pick"
+            },
+            "quantity": 400,
+            "unit": "g",
+            "prices": [
+                {
+                    "storeId": 1,
+                    "storeName": "Lidl",
+                    "price": 6.10
+                },
+                {
+                    "storeId": 2,
+                    "storeName": "Tesco",
+                    "price": 6.30
+                },
+                {
+                    "storeId": 3,
+                    "storeName": "Aldi",
+                    "price": 6.00
+                },
+                {
+                    "storeId": 4,
+                    "storeName": "Auchan",
+                    "price": 6.50
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "name": "Minced pork",
+            "category": {
+                "id": 1,
+                "name": "Meat"
+            },
+            "brand": {
+                "id": 2,
+                "name": "Sága"
+            },
+            "quantity": 1000,
+            "unit": "g",
+            "prices": [
+                {
+                    "storeId": 1,
+                    "storeName": "Lidl",
+                    "price": 5.10
+                },
+                {
+                    "storeId": 2,
+                    "storeName": "Tesco",
+                    "price": 5.30
+                },
+                {
+                    "storeId": 3,
+                    "storeName": "Aldi",
+                    "price": 5.00
+                },
+                {
+                    "storeId": 4,
+                    "storeName": "Auchan",
+                    "price": 5.40
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "name": "UHT milk 2.8%",
+            "category": {
+                "id": 2,
+                "name": "Dairy"
+            },
+            "brand": {
+                "id": 3,
+                "name": "Mizo"
+            },
+            "quantity": 1,
+            "unit": "l",
+            "prices": [
+                {
+                    "storeId": 1,
+                    "storeName": "Lidl",
+                    "price": 1.20
+                },
+                {
+                    "storeId": 2,
+                    "storeName": "Tesco",
+                    "price": 1.25
+                },
+                {
+                    "storeId": 3,
+                    "storeName": "Aldi",
+                    "price": 1.15
+                },
+                {
+                    "storeId": 4,
+                    "storeName": "Auchan",
+                    "price": 1.30
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "name": "Butter",
+            "category": {
+                "id": 2,
+                "name": "Dairy"
+            },
+            "brand": {
+                "id": 3,
+                "name": "Mizo"
+            },
+            "quantity": 250,
+            "unit": "g",
+            "prices": [
+                {
+                    "storeId": 1,
+                    "storeName": "Lidl",
+                    "price": 2.30
+                },
+                {
+                    "storeId": 2,
+                    "storeName": "Tesco",
+                    "price": 2.45
+                },
+                {
+                    "storeId": 3,
+                    "storeName": "Aldi",
+                    "price": 2.25
+                },
+                {
+                    "storeId": 4,
+                    "storeName": "Auchan",
+                    "price": 2.50
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "name": "Fruit yogurt strawberry",
+            "category": {
+                "id": 2,
+                "name": "Dairy"
+            },
+            "brand": {
+                "id": 4,
+                "name": "Pöttyös"
+            },
+            "quantity": 150,
+            "unit": "g",
+            "prices": [
+                {
+                    "storeId": 1,
+                    "storeName": "Lidl",
+                    "price": 0.75
+                },
+                {
+                    "storeId": 2,
+                    "storeName": "Tesco",
+                    "price": 0.80
+                },
+                {
+                    "storeId": 3,
+                    "storeName": "Aldi",
+                    "price": 0.70
+                },
+                {
+                    "storeId": 4,
+                    "storeName": "Auchan",
+                    "price": 0.85
+                }
+            ]
+        },
+        {
+            "id": 8,
+            "name": "Dry spaghetti",
+            "category": {
+                "id": 3,
+                "name": "Bakery"
+            },
+            "brand": {
+                "id": 5,
+                "name": "Gyermelyi"
+            },
+            "quantity": 500,
+            "unit": "g",
+            "prices": [
+                {
+                    "storeId": 1,
+                    "storeName": "Lidl",
+                    "price": 1.40
+                },
+                {
+                    "storeId": 2,
+                    "storeName": "Tesco",
+                    "price": 1.55
+                },
+                {
+                    "storeId": 3,
+                    "storeName": "Aldi",
+                    "price": 1.35
+                },
+                {
+                    "storeId": 4,
+                    "storeName": "Auchan",
+                    "price": 1.60
+                }
+            ]
+        },
+        {
+            "id": 9,
+            "name": "Toast bread",
+            "category": {
+                "id": 3,
+                "name": "Bakery"
+            },
+            "brand": {
+                "id": 5,
+                "name": "Gyermelyi"
+            },
+            "quantity": 500,
+            "unit": "g",
+            "prices": [
+                {
+                    "storeId": 1,
+                    "storeName": "Lidl",
+                    "price": 1.30
+                },
+                {
+                    "storeId": 2,
+                    "storeName": "Tesco",
+                    "price": 1.45
+                },
+                {
+                    "storeId": 3,
+                    "storeName": "Aldi",
+                    "price": 1.25
+                },
+                {
+                    "storeId": 4,
+                    "storeName": "Auchan",
+                    "price": 1.50
+                }
+            ]
+        },
+        {
+            "id": 10,
+            "name": "Frozen peas",
+            "category": {
+                "id": 4,
+                "name": "Frozen food"
+            },
+            "brand": {
+                "id": 3,
+                "name": "Mizo"
+            },
+            "quantity": 750,
+            "unit": "g",
+            "prices": [
+                {
+                    "storeId": 1,
+                    "storeName": "Lidl",
+                    "price": 2.10
+                },
+                {
+                    "storeId": 2,
+                    "storeName": "Tesco",
+                    "price": 2.25
+                },
+                {
+                    "storeId": 3,
+                    "storeName": "Aldi",
+                    "price": 2.05
+                },
+                {
+                    "storeId": 4,
+                    "storeName": "Auchan",
+                    "price": 2.30
+                }
+            ]
+        },
+        {
+            "id": 11,
+            "name": "Beef goulash meat",
+            "category": {
+                "id": 1,
+                "name": "Meat"
+            },
+            "brand": {
+                "id": 1,
+                "name": "Pick"
+            },
+            "quantity": 800,
+            "unit": "g",
+            "prices": [
+                {
+                    "storeId": 1,
+                    "storeName": "Lidl",
+                    "price": 8.70
+                },
+                {
+                    "storeId": 2,
+                    "storeName": "Tesco",
+                    "price": 8.95
+                },
+                {
+                    "storeId": 3,
+                    "storeName": "Aldi",
+                    "price": 8.60
+                },
+                {
+                    "storeId": 4,
+                    "storeName": "Auchan",
+                    "price": 9.10
+                }
+            ]
+        },
+        {
+            "id": 12,
+            "name": "Smoked bacon",
+            "category": {
+                "id": 1,
+                "name": "Meat"
+            },
+            "brand": {
+                "id": 1,
+                "name": "Pick"
+            },
+            "quantity": 300,
+            "unit": "g",
+            "prices": [
+                {
+                    "storeId": 1,
+                    "storeName": "Lidl",
+                    "price": 3.10
+                },
+                {
+                    "storeId": 2,
+                    "storeName": "Tesco",
+                    "price": 3.25
+                },
+                {
+                    "storeId": 3,
+                    "storeName": "Aldi",
+                    "price": 3.00
+                },
+                {
+                    "storeId": 4,
+                    "storeName": "Auchan",
+                    "price": 3.35
+                }
+            ]
+        },
+        {
+            "id": 13,
+            "name": "Turkey breast slices",
+            "category": {
+                "id": 1,
+                "name": "Meat"
+            },
+            "brand": {
+                "id": 2,
+                "name": "Sága"
+            },
+            "quantity": 200,
+            "unit": "g",
+            "prices": [
+                {
+                    "storeId": 1,
+                    "storeName": "Lidl",
+                    "price": 3.40
+                },
+                {
+                    "storeId": 2,
+                    "storeName": "Tesco",
+                    "price": 3.60
+                },
+                {
+                    "storeId": 3,
+                    "storeName": "Aldi",
+                    "price": 3.30
+                },
+                {
+                    "storeId": 4,
+                    "storeName": "Auchan",
+                    "price": 3.65
+                }
+            ]
+        },
+        {
+            "id": 14,
+            "name": "Sausage frankfurter",
+            "category": {
+                "id": 1,
+                "name": "Meat"
+            },
+            "brand": {
+                "id": 2,
+                "name": "Sága"
+            },
+            "quantity": 500,
+            "unit": "g",
+            "prices": [
+                {
+                    "storeId": 1,
+                    "storeName": "Lidl",
+                    "price": 4.10
+                },
+                {
+                    "storeId": 2,
+                    "storeName": "Tesco",
+                    "price": 4.30
+                },
+                {
+                    "storeId": 3,
+                    "storeName": "Aldi",
+                    "price": 4.00
+                },
+                {
+                    "storeId": 4,
+                    "storeName": "Auchan",
+                    "price": 4.35
+                }
+            ]
+        },
+        {
+            "id": 15,
+            "name": "Trappista cheese slices",
+            "category": {
+                "id": 2,
+                "name": "Dairy"
+            },
+            "brand": {
+                "id": 3,
+                "name": "Mizo"
+            },
+            "quantity": 200,
+            "unit": "g",
+            "prices": [
+                {
+                    "storeId": 1,
+                    "storeName": "Lidl",
+                    "price": 2.20
+                },
+                {
+                    "storeId": 2,
+                    "storeName": "Tesco",
+                    "price": 2.35
+                },
+                {
+                    "storeId": 3,
+                    "storeName": "Aldi",
+                    "price": 2.15
+                },
+                {
+                    "storeId": 4,
+                    "storeName": "Auchan",
+                    "price": 2.40
+                }
+            ]
+        },
+        {
+            "id": 16,
+            "name": "Natural yogurt",
+            "category": {
+                "id": 2,
+                "name": "Dairy"
+            },
+            "brand": {
+                "id": 4,
+                "name": "Pöttyös"
+            },
+            "quantity": 400,
+            "unit": "g",
+            "prices": [
+                {
+                    "storeId": 1,
+                    "storeName": "Lidl",
+                    "price": 1.10
+                },
+                {
+                    "storeId": 2,
+                    "storeName": "Tesco",
+                    "price": 1.25
+                },
+                {
+                    "storeId": 3,
+                    "storeName": "Aldi",
+                    "price": 1.05
+                },
+                {
+                    "storeId": 4,
+                    "storeName": "Auchan",
+                    "price": 1.30
+                }
+            ]
+        },
+        {
+            "id": 17,
+            "name": "Sour cream 20%",
+            "category": {
+                "id": 2,
+                "name": "Dairy"
+            },
+            "brand": {
+                "id": 3,
+                "name": "Mizo"
+            },
+            "quantity": 330,
+            "unit": "g",
+            "prices": [
+                {
+                    "storeId": 1,
+                    "storeName": "Lidl",
+                    "price": 1.30
+                },
+                {
+                    "storeId": 2,
+                    "storeName": "Tesco",
+                    "price": 1.45
+                },
+                {
+                    "storeId": 3,
+                    "storeName": "Aldi",
+                    "price": 1.25
+                },
+                {
+                    "storeId": 4,
+                    "storeName": "Auchan",
+                    "price": 1.50
+                }
+            ]
+        },
+        {
+            "id": 18,
+            "name": "Cooking cream 20%",
+            "category": {
+                "id": 2,
+                "name": "Dairy"
+            },
+            "brand": {
+                "id": 3,
+                "name": "Mizo"
+            },
+            "quantity": 500,
+            "unit": "ml",
+            "prices": [
+                {
+                    "storeId": 1,
+                    "storeName": "Lidl",
+                    "price": 1.75
+                },
+                {
+                    "storeId": 2,
+                    "storeName": "Tesco",
+                    "price": 1.90
+                },
+                {
+                    "storeId": 3,
+                    "storeName": "Aldi",
+                    "price": 1.70
+                },
+                {
+                    "storeId": 4,
+                    "storeName": "Auchan",
+                    "price": 1.95
+                }
+            ]
+        },
+        {
+            "id": 19,
+            "name": "Penne pasta",
+            "category": {
+                "id": 3,
+                "name": "Bakery"
+            },
+            "brand": {
+                "id": 5,
+                "name": "Gyermelyi"
+            },
+            "quantity": 500,
+            "unit": "g",
+            "prices": [
+                {
+                    "storeId": 1,
+                    "storeName": "Lidl",
+                    "price": 1.35
+                },
+                {
+                    "storeId": 2,
+                    "storeName": "Tesco",
+                    "price": 1.55
+                },
+                {
+                    "storeId": 3,
+                    "storeName": "Aldi",
+                    "price": 1.30
+                },
+                {
+                    "storeId": 4,
+                    "storeName": "Auchan",
+                    "price": 1.60
+                }
+            ]
+        },
+        {
+            "id": 20,
+            "name": "Whole wheat pasta",
+            "category": {
+                "id": 3,
+                "name": "Bakery"
+            },
+            "brand": {
+                "id": 5,
+                "name": "Gyermelyi"
+            },
+            "quantity": 500,
+            "unit": "g",
+            "prices": [
+                {
+                    "storeId": 1,
+                    "storeName": "Lidl",
+                    "price": 1.50
+                },
+                {
+                    "storeId": 2,
+                    "storeName": "Tesco",
+                    "price": 1.70
+                },
+                {
+                    "storeId": 3,
+                    "storeName": "Aldi",
+                    "price": 1.45
+                },
+                {
+                    "storeId": 4,
+                    "storeName": "Auchan",
+                    "price": 1.75
+                }
+            ]
+        },
+        {
+            "id": 21,
+            "name": "White flour",
+            "category": {
+                "id": 3,
+                "name": "Bakery"
+            },
+            "brand": {
+                "id": 5,
+                "name": "Gyermelyi"
+            },
+            "quantity": 1000,
+            "unit": "g",
+            "prices": [
+                {
+                    "storeId": 1,
+                    "storeName": "Lidl",
+                    "price": 0.95
+                },
+                {
+                    "storeId": 2,
+                    "storeName": "Tesco",
+                    "price": 1.05
+                },
+                {
+                    "storeId": 3,
+                    "storeName": "Aldi",
+                    "price": 0.90
+                },
+                {
+                    "storeId": 4,
+                    "storeName": "Auchan",
+                    "price": 1.10
+                }
+            ]
+        },
+        {
+            "id": 22,
+            "name": "Frozen green beans",
+            "category": {
+                "id": 4,
+                "name": "Frozen food"
+            },
+            "brand": {
+                "id": 3,
+                "name": "Mizo"
+            },
+            "quantity": 750,
+            "unit": "g",
+            "prices": [
+                {
+                    "storeId": 1,
+                    "storeName": "Lidl",
+                    "price": 2.00
+                },
+                {
+                    "storeId": 2,
+                    "storeName": "Tesco",
+                    "price": 2.15
+                },
+                {
+                    "storeId": 3,
+                    "storeName": "Aldi",
+                    "price": 1.95
+                },
+                {
+                    "storeId": 4,
+                    "storeName": "Auchan",
+                    "price": 2.20
+                }
+            ]
+        },
+        {
+            "id": 23,
+            "name": "Frozen sweet corn",
+            "category": {
+                "id": 4,
+                "name": "Frozen food"
+            },
+            "brand": {
+                "id": 3,
+                "name": "Mizo"
+            },
+            "quantity": 1000,
+            "unit": "g",
+            "prices": [
+                {
+                    "storeId": 1,
+                    "storeName": "Lidl",
+                    "price": 2.30
+                },
+                {
+                    "storeId": 2,
+                    "storeName": "Tesco",
+                    "price": 2.50
+                },
+                {
+                    "storeId": 3,
+                    "storeName": "Aldi",
+                    "price": 2.25
+                },
+                {
+                    "storeId": 4,
+                    "storeName": "Auchan",
+                    "price": 2.55
+                }
+            ]
+        },
+        {
+            "id": 24,
+            "name": "Frozen chicken nuggets",
+            "category": {
+                "id": 4,
+                "name": "Frozen food"
+            },
+            "brand": {
+                "id": 2,
+                "name": "Sága"
+            },
+            "quantity": 750,
+            "unit": "g",
+            "prices": [
+                {
+                    "storeId": 1,
+                    "storeName": "Lidl",
+                    "price": 4.40
+                },
+                {
+                    "storeId": 2,
+                    "storeName": "Tesco",
+                    "price": 4.65
+                },
+                {
+                    "storeId": 3,
+                    "storeName": "Aldi",
+                    "price": 4.30
+                },
+                {
+                    "storeId": 4,
+                    "storeName": "Auchan",
+                    "price": 4.70
+                }
+            ]
+        },
+        {
+            "id": 25,
+            "name": "Frozen french fries",
+            "category": {
+                "id": 4,
+                "name": "Frozen food"
+            },
+            "brand": {
+                "id": 5,
+                "name": "Gyermelyi"
+            },
+            "quantity": 1000,
+            "unit": "g",
+            "prices": [
+                {
+                    "storeId": 1,
+                    "storeName": "Lidl",
+                    "price": 2.80
+                },
+                {
+                    "storeId": 2,
+                    "storeName": "Tesco",
+                    "price": 3.00
+                },
+                {
+                    "storeId": 3,
+                    "storeName": "Aldi",
+                    "price": 2.75
+                },
+                {
+                    "storeId": 4,
+                    "storeName": "Auchan",
+                    "price": 3.05
+                }
+            ]
+        },
+        {
+            "id": 26,
+            "name": "Frozen broccoli",
+            "category": {
+                "id": 4,
+                "name": "Frozen food"
+            },
+            "brand": {
+                "id": 3,
+                "name": "Mizo"
+            },
+            "quantity": 1000,
+            "unit": "g",
+            "prices": [
+                {
+                    "storeId": 1,
+                    "storeName": "Lidl",
+                    "price": 2.50
+                },
+                {
+                    "storeId": 2,
+                    "storeName": "Tesco",
+                    "price": 2.70
+                },
+                {
+                    "storeId": 3,
+                    "storeName": "Aldi",
+                    "price": 2.45
+                },
+                {
+                    "storeId": 4,
+                    "storeName": "Auchan",
+                    "price": 2.75
+                }
+            ]
+        },
+        {
+            "id": 27,
+            "name": "Frozen spinach",
+            "category": {
+                "id": 4,
+                "name": "Frozen food"
+            },
+            "brand": {
+                "id": 3,
+                "name": "Mizo"
+            },
+            "quantity": 750,
+            "unit": "g",
+            "prices": [
+                {
+                    "storeId": 1,
+                    "storeName": "Lidl",
+                    "price": 1.90
+                },
+                {
+                    "storeId": 2,
+                    "storeName": "Tesco",
+                    "price": 2.05
+                },
+                {
+                    "storeId": 3,
+                    "storeName": "Aldi",
+                    "price": 1.85
+                },
+                {
+                    "storeId": 4,
+                    "storeName": "Auchan",
+                    "price": 2.10
+                }
+            ]
+        },
+        {
+            "id": 28,
+            "name": "Frozen fish fillet",
+            "category": {
+                "id": 4,
+                "name": "Frozen food"
+            },
+            "brand": {
+                "id": 2,
+                "name": "Sága"
+            },
+            "quantity": 600,
+            "unit": "g",
+            "prices": [
+                {
+                    "storeId": 1,
+                    "storeName": "Lidl",
+                    "price": 5.20
+                },
+                {
+                    "storeId": 2,
+                    "storeName": "Tesco",
+                    "price": 5.45
+                },
+                {
+                    "storeId": 3,
+                    "storeName": "Aldi",
+                    "price": 5.10
+                },
+                {
+                    "storeId": 4,
+                    "storeName": "Auchan",
+                    "price": 5.55
+                }
+            ]
+        },
+        {
+            "id": 29,
+            "name": "Frozen pizza salami",
+            "category": {
+                "id": 4,
+                "name": "Frozen food"
+            },
+            "brand": {
+                "id": 5,
+                "name": "Gyermelyi"
+            },
+            "quantity": 450,
+            "unit": "g",
+            "prices": [
+                {
+                    "storeId": 1,
+                    "storeName": "Lidl",
+                    "price": 3.30
+                },
+                {
+                    "storeId": 2,
+                    "storeName": "Tesco",
+                    "price": 3.55
+                },
+                {
+                    "storeId": 3,
+                    "storeName": "Aldi",
+                    "price": 3.25
+                },
+                {
+                    "storeId": 4,
+                    "storeName": "Auchan",
+                    "price": 3.60
+                }
+            ]
+        },
+        {
+            "id": 30,
+            "name": "Frozen berry mix",
+            "category": {
+                "id": 4,
+                "name": "Frozen food"
+            },
+            "brand": {
+                "id": 5,
+                "name": "Gyermelyi"
+            },
+            "quantity": 750,
+            "unit": "g",
+            "prices": [
+                {
+                    "storeId": 1,
+                    "storeName": "Lidl",
+                    "price": 3.40
+                },
+                {
+                    "storeId": 2,
+                    "storeName": "Tesco",
+                    "price": 3.65
+                },
+                {
+                    "storeId": 3,
+                    "storeName": "Aldi",
+                    "price": 3.35
+                },
+                {
+                    "storeId": 4,
+                    "storeName": "Auchan",
+                    "price": 3.70
+                }
+            ]
+        }
+    ]
+}
