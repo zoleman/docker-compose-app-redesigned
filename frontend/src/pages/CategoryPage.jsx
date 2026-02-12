@@ -15,15 +15,9 @@ function Category() {
     error: dataError
   } = useFetch('/data/data.json')
 
-  const {
-    data: categories,
-    loading: categoriesLoading,
-    error: categoriesError
-  } = useFetch('/api/categories')
 
-  useEffect(() => {
-    console.log([data,categories])
-  },[data,categories])
+
+
 
 
   const [selectedBrand, setSelectedBrand] = useState([]);
@@ -54,9 +48,9 @@ function Category() {
     })
   }
 
-  if (dataLoading || categoriesLoading) return <div>loading....</div>
-  if (dataError || categoriesError) return <div>{[dataError,categoriesError]}</div>
-  if (!data || !categories) return <div>nincs adat</div>
+  if (dataLoading ) return <div>loading....</div>
+  if (dataError ) return <div>{[dataError]}</div>
+  if (!data ) return <div>nincs adat</div>
 
 
   return (
@@ -78,7 +72,7 @@ function Category() {
           {/*right listproducts */}
           <div className='lg:col-span-4!'>
             <CategoryFilter
-              categories={categories}
+              categories={data.categories}
               selectedCategories={selectedCategories}
               handleSelectCategories={handleSelectCategories}
             />

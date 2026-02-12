@@ -1,4 +1,22 @@
 {
+    "categories": [
+        {
+            "id": 1,
+            "name": "Meat"
+        },
+        {
+            "id": 2,
+            "name": "Dairy"
+        },
+        {
+            "id": 3,
+            "name": "Bakery"
+        },
+        {
+            "id": 4,
+            "name": "Frozen food"
+        }
+    ],
     "brands": [
         {
             "id": 1,
