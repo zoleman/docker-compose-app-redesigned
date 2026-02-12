@@ -4,15 +4,30 @@ import SideFilterSection from '@/components/categoryPage/SideFilterSection'
 import { useFetch } from '@/helpers/useFetch';
 
 
-import React, { useEffect, useState } from 'react';
+import React, { use, useEffect, useState } from 'react';
 
 
 function Category() {
 
-  const { data, loading, error } = useFetch('/data/data.json')//
+  const {
+    data: data,
+    loading: dataLoading,
+    error: dataError
+  } = useFetch('/data/data.json')
+
+  const {
+    data: categories,
+    loading: categoriesLoading,
+    error: categoriesError
+  } = useFetch('/api/categories')
+
+  useEffect(() => {
+    console.log([data,categories])
+  },[data,categories])
+
 
   const [selectedBrand, setSelectedBrand] = useState([]);
-  const [selectedCategories,setSelectedCategories] = useState([]);
+  const [selectedCategories, setSelectedCategories] = useState([]);
 
 
 
@@ -23,7 +38,7 @@ function Category() {
       if (prev.includes(id)) {
         return prev.filter((c) => c !== id)
       } else {
-        return [...prev,id]
+        return [...prev, id]
       }
     })
   }
@@ -39,9 +54,9 @@ function Category() {
     })
   }
 
-  if (loading) return <div>loading....</div>
-  if (error) return <div>{error}</div>
-  if(!data) return <div>nincs adat</div>
+  if (dataLoading || categoriesLoading) return <div>loading....</div>
+  if (dataError || categoriesError) return <div>{[dataError,categoriesError]}</div>
+  if (!data || !categories) return <div>nincs adat</div>
 
 
   return (
@@ -63,9 +78,9 @@ function Category() {
           {/*right listproducts */}
           <div className='lg:col-span-4!'>
             <CategoryFilter
-            categories={data.categories}
-            selectedCategories={selectedCategories}
-            handleSelectCategories={handleSelectCategories}
+              categories={categories}
+              selectedCategories={selectedCategories}
+              handleSelectCategories={handleSelectCategories}
             />
             <CategorySection
               products={data.products}
