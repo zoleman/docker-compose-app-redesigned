@@ -4,7 +4,7 @@ import SideFilterSection from '@/components/categoryPage/SideFilterSection'
 import { useFetch } from '@/helpers/useFetch';
 
 
-import React, { use, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 
 function Category() {
