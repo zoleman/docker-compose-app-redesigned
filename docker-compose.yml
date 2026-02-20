@@ -6,7 +6,7 @@ services:
       context: ./backend
       target: dev   # Use the dev stage
     container_name: backend
-    restart: always
+    restart: no
     volumes:
       - ./backend:/app   # host source mounted for hot reload
     environment:
@@ -24,7 +24,7 @@ services:
   db:
     image: postgres:15
     container_name: tesco_db
-    restart: always
+    restart: no
     environment:
       POSTGRES_USER: ${DB_USERNAME}
       POSTGRES_PASSWORD: ${DB_PASSWORD}
@@ -41,7 +41,7 @@ services:
       context: ./frontend
       target: dev
     container_name: frontend
-    restart: always
+    restart: no
     volumes:
       - ./frontend:/app
       - /app/node_modules

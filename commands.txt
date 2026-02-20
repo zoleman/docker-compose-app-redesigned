@@ -1,0 +1,8 @@
+docker compose -f docker-compose.devops.yml -p devops up --build
+
+docker compose -f docker-compose.devops.yml -p devops down
+
+docker volume rm devops_db_data_devops
+
+docker system prune -a --volumes
+

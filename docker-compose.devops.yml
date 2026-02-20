@@ -1,0 +1,79 @@
+version: "3.9"
+
+services:
+
+  nginx:
+    build:
+      context: ./
+      dockerfile: ./nginx/Dockerfile
+    container_name: nginx_devops
+    restart: no
+    ports:
+      - "8080:80"
+    depends_on:
+      - backend1
+      - backend2
+      - backend3
+    networks:
+      - devops-tesconet
+
+  backend1:
+    build:
+      context: ./backend
+      target: runtime
+    restart: no
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/${DB_NAME}
+      SPRING_DATASOURCE_USERNAME: ${DB_USERNAME}
+      SPRING_DATASOURCE_PASSWORD: ${DB_PASSWORD}
+      SPRING_PROFILES_ACTIVE: dev
+    networks:
+      - devops-tesconet
+
+  backend2:
+    build:
+      context: ./backend
+      target: runtime
+    restart: no
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/${DB_NAME}
+      SPRING_DATASOURCE_USERNAME: ${DB_USERNAME}
+      SPRING_DATASOURCE_PASSWORD: ${DB_PASSWORD}
+      SPRING_PROFILES_ACTIVE: dev
+    networks:
+      - devops-tesconet
+
+  backend3:
+    build:
+      context: ./backend
+      target: runtime
+    restart: no
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/${DB_NAME}
+      SPRING_DATASOURCE_USERNAME: ${DB_USERNAME}
+      SPRING_DATASOURCE_PASSWORD: ${DB_PASSWORD}
+      SPRING_PROFILES_ACTIVE: dev
+    networks:
+      - devops-tesconet
+
+  db:
+    image: postgres:15
+    container_name: tesco_db_devops
+    restart: no
+    environment:
+      POSTGRES_USER: ${DB_USERNAME}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_NAME}
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_data_devops:/var/lib/postgresql/data
+      - ./db/init:/docker-entrypoint-initdb.d
+    networks:
+      - devops-tesconet
+
+volumes:
+  db_data_devops:
+
+networks:
+  devops-tesconet: {}
